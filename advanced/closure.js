@@ -1,0 +1,2 @@
+// lexical environment, scope chain
+
