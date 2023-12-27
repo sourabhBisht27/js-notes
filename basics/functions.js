@@ -52,7 +52,7 @@
 
 // Immediately Invoked Function Expressions(IIFE)
 
-// It is used to remove the pullution of global scope variables.
+// It is used to remove the pollution of global scope variables.
 // this is also called name IIFE
 (function chai() {
     console.log(`DB connected`);

@@ -1,74 +1,78 @@
 // object creation 
 
-// const person = {
-//     name: "Sourabh",
-//     age: 21,
-//     skills: ["frontend", "backend", "full-stack"]
-// }
+const person = {
+    name: "Sourabh",
+    age: 21,
+    skills: ["frontend", "backend", "full-stack"]
+}
 
 // console.log(person);
 
 // accessing data from objects:
 // way - 1
 // console.log(person.name);
+
+// [ 'frontend', 'backend', 'full-stack', [ 'java' ] ]
 // console.log(person.skills.push(["java"]));
+// console.log(person.skills.push("java"));
 // console.log(person.skills);
 
 // way - (2)
-// console.log(person["age"]); // key will be put in "" inside the [].
+// key will be put in "" inside the [].
+// console.log(person["age"]); 
 
 // adding key-value pairs to objects
 
-// person.gender = "male";
+person.gender = "male";
 // console.log(person);
 
 // ============== bracket notation([]) vs dot notation(.) =================
 
-// const key = "email";
-// const student = {
-//     name: "Sourabh",
-//     age: 21,
-//     course: "btech",
-//     "roll no": 12515603120,
-// }
+const key = "email";
+const student2 = {
+    name: "Sourabh",
+    age: 21,
+    course: "btech",
+    "roll no": 12515603120,
+}
 
 // we can't access "roll no" with dot operator like :
 // person.roll no  -->  INVALID
-// console.log(student["roll no"]); 
+// console.log(student2["roll no"]); 
 
 // this will print --> key: "xyz@gmail.com" instead of email: "xyz@gmail.com"
-// student.key = "xyz@gmail.com";
-// console.log(student);
+student2.key = "xyz@gmail.com";
+// console.log(student2);
 
 // this will print --> email: "xyz@gmail.com"
 // so in such cases use [] notation instead of . notation
-// student[key] = "xyz@gmail.com";
-// console.log(student);
+student2[key] = "xyz@gmail.com";
+// console.log(student2);
 
 // Iterating objects --> (1) for in loop(not nice but one should know), (2) Object.keys
 // (1)
-const student = {
+const student3 = {
         name: "Sourabh",
         age: 21,
         course: "btech",
         "roll no": 12515603120,
     }
 
-for (const key in student) {
-    // this will not work because it will search if there is any key in student
+for (const key in student3) {
+    // this will not work because it will search if there is any key in student3
     // with the name of key, which it won't find & return undefined 4 times.
-    // console.log(student.key);
+    // console.log(student3.key);
     // so we use [] notation again.
-    // console.log(student[key]); // will print values only.
-    // console.log(`${key} => ${student[key]}`); // will print key as well as values.
+    // console.log(student3[key]); // will print values only.
+    // console.log(`${key} => ${student3[key]}`); // will print key as well as values.
     // OR
-    // console.log(key, ":", student[key]); 
+    // console.log(key, ":", student3[key]); 
 }
 
 // (2) Object.keys --> 
 
-for (const key of Object.keys(student)) {
-    // console.log(student[key]);
+for (const key of Object.keys(student3)) {
+    // console.log(student3[key]);
 }
 
 // computed properties
@@ -121,8 +125,8 @@ const artist = {
     genre: "hip-hop",
 }
 
-const { artistName, famousSong, age } = artist;
-// console.log(artistName, famousSong, age);
+const { artistName, famousSong, age, genre } = artist;
+// console.log(artistName, famousSong, age, genre);
 
 //  OR 
 
@@ -153,7 +157,7 @@ const users = [
     { userId: 3, firstName: "nitish", gender: "male" },
 ]
 const [user1, user2, user3] = users;
-// console.log(user1); 
+console.log(user1); 
 // console.log(user1.firstName);
 // console.log(user3.gender);
 
