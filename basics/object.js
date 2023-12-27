@@ -111,7 +111,7 @@ const obj = { ..."abcdefghijklmno" };
 // console.log( {..."abc"} );
 // console.log({...["one", "two", "three"]});
 
-// ============ object destructuring ================
+// ================ object destructuring ================
 
 const artist = {
     artistName: "Juice Wrld",

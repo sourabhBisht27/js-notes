@@ -40,6 +40,7 @@ console.log(container.childNodes);
 // 
 console.log(container.children);
 
+
 // ======== oct 27 ==========
 const h1 = document.querySelector('.container');
 // DOMTokenList(3) [ "container", "d-flex", "box" ]
@@ -61,7 +62,7 @@ div.prepend('This is prepend');
 // i. querySelectorAll() => gives static list(NodeList)
 // ii. getElementBytagName/className/id => gives live list(HTMLCollection)
 
-// =========== Events ==============
+//                      =========== Events ==============
 // (1) in case of 'function declaration' value of 'this' keyword will be the selected 
 // html element(on which event is applied) & in case of 'arrow functions' it will be the 
 // window object(one level above). 

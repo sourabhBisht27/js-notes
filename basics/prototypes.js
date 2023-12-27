@@ -2,21 +2,21 @@
 // In JS functions are also objects.
 
 const hello = function myFunc() {
-    console.log('i am an object');
+    // console.log('i am an object');
 }
 
 // console.log(hello.name);
-// console.log(hello.prototype);
 
 // #. we can also add our own properties to the method, just like objects.
 hello.myOwnProp = "unique value";
 // console.log(hello.myOwnProp); 
 
 // #. only functions provide prototype({}) property. 
+
 // returns an empty {}
 // console.log(hello.prototype);
 
-// setting key-value pair in prototype
+// (2)setting key-value pair in prototype
 hello.prototype.abc = "One";
 hello.prototype.xyz = "Two";
 hello.prototype.sing = function() {
@@ -27,13 +27,14 @@ hello.prototype.sing = function() {
 // console.log(hello.prototype.sing());
 
 // new keyword ==> (1) creates an empty {} (now 'this' will reference to the empty object)
-    //             (2) returns the object
-    //             (3) implicitly do what Object.assign() did.
+//                 (2) returns the object
+//                 (3) implicitly does what Object.assign() did.
 
 function createUser(firstName, age) {
     this.firstName = firstName;
     this.age = age;
 }
+
 createUser.prototype.about = function () {
     console.log(this.firstName, this.age);
 }
@@ -82,32 +83,49 @@ for(const key in user10) {
     }
 }
 
-// more about prototypes
-// let nums = new Array(1, 3, 4, 5);
-// // gives array
+// ================ more about prototypes ================
+
+let nums1 = new Array(1, 3, 4, 5);
+// gives array([])
 // console.log(Array.prototype);
 
-let nums = [1, 2, 3, 4];
+let nums2 = [1, 2, 3, 4];
 // gives prototype of nums==> array([])
-// console.log(Object.getPrototypeOf(nums));
+// console.log(Object.getPrototypeOf(nums2));
 // 
 function hi() {
     // console.log("hi");
 }
 // gives prototype of hi ==> object({}) -- (1)
-// console.log(hi.prototype);
+console.log(hi.prototype);
 
 // Q - but prototypes are only objects in javascript, so why this is happening?
 // why prototype of array is array not object?
 
-// A - this is because we can modify prototype & creater of JS thought it would be better
+// A - this is because we can modify prototype & creater of JS though it would be better
 // if the prototype of Array is array.
 
 hi.prototype = [];
 // now it is coming out to be array ==> [] -- (2)
 console.log(hi.prototype);
 
-// =========== extends ================
+// ================ extends ================
+
+// In JavaScript, a prototype is an essential part of the language's object-oriented programming model. 
+// It's a mechanism that allows objects to inherit properties and behaviors from other objects. Every 
+// object in JavaScript has a prototype, except for the root object, which is typically referred to as 
+// Object.prototype.
+
+// 1. Every Object Has a Prototype: In JavaScript, every object is associated with a prototype object. 
+// This prototype is another object from which the current object inherits properties and methods.
+
+// 2. Prototype Chain: When you access a property or method on an object, JavaScript first looks for that 
+// property or method on the object itself. If it doesn't find it, it then looks at the object's 
+// prototype (its parent), and if it's not found there, it continues up the prototype chain until it 
+// reaches Object.prototype. If the property or method is not found anywhere in the chain, JavaScript 
+// will return undefined.
+
+// (1) example :
 class Animal {
     constructor(name, age) {
         this.name = name;
@@ -136,6 +154,26 @@ class Dog extends Animal {
 const tommy = new Dog("tommy", 2, 50);
 // console.log(tommy.eat());
 
+
+// (2)another example:
+
+// Create an object
+const person = {
+    name: 'Alice',
+    sayHello: function() {
+      console.log(`Hello, my name is ${this.name}`);
+    }
+  };
+  
+  // Create another object that inherits from 'person'
+  const student = Object.create(person);
+  student.major = 'Computer Science';
+  
+  // Now, 'student' has access to the 'name' property and 'sayHello' method from 'person'
+  console.log(student.name); // Outputs: Alice
+  student.sayHello();       // Outputs: Hello, my name is Alice
+  
+
 // ============== getters & setters ==================
 class Person {
     constructor(firstName, lastName, age) {
@@ -158,8 +196,8 @@ class Person {
 
 const person10 = new Person("Sourabh", "Bisht", 21); 
 // will be called without wrting person10.fullName()
-console.log(person10.fullName);
+// console.log(person10.fullName);
 
 // returns { firstName: "John", lastName: "Cena", age: 21 }
 person10.fullName = "John Cena";
-console.log(person10);
+// console.log(person10);

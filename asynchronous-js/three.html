@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something something...</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // const startTimer = () => {
+    //     setInterval(() => {
+    //        console.log("started"); 
+    //     }, 2000);
+    // }
+    
+    // setInterval(() => {
+    //     console.log('hi');
+    // }, 2000)
+    
+    let startTimer
+    document.getElementById('start').addEventListener('click', () => {
+        if (!startTimer) {
+            startTimer = setInterval(() => {
+                console.log('hi');
+            }, 2000)
+        }
+    })
+    
+    document.getElementById('stop').addEventListener('click', () => {
+        clearInterval(startTimer)
+        // flushed out startTimer
+        startTimer = null
+        console.log("stopped");
+    })
+    
+</script>
+</html>

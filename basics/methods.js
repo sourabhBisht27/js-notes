@@ -2,7 +2,7 @@
 
 // (1) forEach()
 
-// *real life example of forEach().*
+// ===================== real life example of forEach(). =====================
 // const users = [
 //     {firstName: "Ronaldo", age: 37},
 //     {firstName: "Sourabh", age: 21},
@@ -80,7 +80,8 @@ const sum = numbers.reduce((accumulator, currentValue) => {
 // 10               5              15
 // 15               10             25
 
-// real life example
+// ==================== real life example ====================
+
 // const userCart = [
 //     { productId: 1, productName: "mobile", price: 15000 },
 //     { productId: 2, productName: "laptop", price: 50000 },
@@ -179,7 +180,7 @@ const userCart3 = [
 
 // creates an array & fills it with 1.
 const array1 = new Array(10).fill(1);
-// console.log(array);
+// console.log(array1);
 
 const array2 = [1, 2, 3, 4, 5, 6, 7, 8];
 // console.log(array2.fill(0, 2, 5));

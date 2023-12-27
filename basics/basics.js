@@ -80,19 +80,19 @@
 
 //  == VS. ===
 
-// let num1 = "7";
-// let num2 = 7;
+let num1 = "7";
+let num2 = 7;
 
 // console.log(num1 == num2); // true, only checks the value of the variable.
 // console.log(num1 === num2); // false, also checks the datatype of the variable.
 
 // =================== Template String =======================
 
-// let name = "Sourabh";
-// let age = 21;
+let name = "Sourabh";
+let age = 21;
 
-// let about = "My name is " + name + " and age is " + age + " ";
-// let aboutMe = `My name is ${name} and age is ${age}`;
+let about = "My name is " + name + " and age is " + age + " ";
+let aboutMe = `My name is ${name} and age is ${age}`;
 // console.log(aboutMe);
 // console.log(about);
 
@@ -108,4 +108,15 @@
 // } else {
 //     console.log("It is falsy value!");
 // }
+
+const url = "https://sourabh.com/sourabh%20bisht";
+// console.log(url.replace('%20', '-'));
+
+// output: 
+// https://sourabh.com/sourabh-bisht
+
+const hundreds = 1000000;
+// console.log(hundreds.toLocaleString('en-IN'));
+// output:
+// 10,00,000
 

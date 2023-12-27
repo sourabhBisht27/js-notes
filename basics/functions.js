@@ -49,7 +49,22 @@
 // console.log(hello); 
 // var hello = "Hi";
 
-// functions inside function
+
+// Immediately Invoked Function Expressions(IIFE)
+
+// It is used to remove the pullution of global scope variables.
+// this is also called name IIFE
+(function chai() {
+    console.log(`DB connected`);
+})();
+// this function gets invoked immediately but doesn't know where to stop 
+// so a ; is req after the () to end the execution of function.
+
+((name) => {
+    console.log(`DB connected ${name}`);
+})('Sourabh');
+
+// ================== functions inside function ==================
 // const app = () => {
 //     const myFunc = () => {
 //         console.log("function inside function");
@@ -81,7 +96,7 @@
 // function rest(a, b, ...c) {
 //     console.log(`a is ${a}`);
 //     console.log(`b is ${b}`);
-    // console.log(`c is ${c}`);
+//     console.log(`c is ${c}`);
 //     console.log(`c is`, c); // prints array 
 // }
 
@@ -121,21 +136,22 @@
 // printDetails(person);
 
 
-// callback functions(..HIGHER ORDER FUNCTIONS..)
+// ===================== Callback functions(..HIGHER ORDER FUNCTIONS..) =====================
 
-// function myFunc2() {
-//     console.log ("inside my func 2");
-// }
+function myFunc2() {
+    console.log ("inside my func 2");
+}
    
 // #. by convention when we pass func inside a func we name it "callback".
-// function myFunc(callback) {
-// callback can be anything but this particular line makes it a function.
-//     callback();
-// }
+function myFunc1(callback) {
+    // callback can be anything but this particular line makes it a function.
+    callback();
+}
 
-// myFunc(myFunc2);
+myFunc1(myFunc2);
 
-// functions returning function(..HIGHER ORDER FUNCTIONS..)
+// ===================== functions returning function(..HIGHER ORDER FUNCTIONS..) =====================
+
 // when we accept function as an argument inside a function or return a function 
 // it is known as HIGHER ORDER FUNCTIONS.
 function myFunc() {
@@ -149,5 +165,5 @@ function myFunc() {
  
 // #. ans will be converted to a function because myFunc() is returning a function to the ans. 
 const ans = myFunc();
-console.log(ans()); 
+// console.log(ans()); 
     
