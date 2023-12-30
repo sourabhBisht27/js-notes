@@ -35,7 +35,7 @@ const person3 = {
 
 // ============ window object ==============
 
-// returns window object
+// returns window object in browser & {} in node environment
 // console.log(this);
 // console.log(window); // this === window
 
@@ -53,10 +53,10 @@ function about(hobby, favArtist) {
     console.log(this.firstName, this.age, hobby, favArtist);
 }
 
-// const user1 = {
-//     firstName: "Sourabh",
-//     age: 21,
-// }
+const user1 = {
+    firstName: "Sourabh",
+    age: 21,
+}
 const user2 = {
     firstName: "Juice",
     age: 24,
@@ -66,7 +66,7 @@ const user3 = {
     age: 28,
 }
 
-// about.call(user1, "football", "Juice WRLD");
+about.call(user1, "football", "Juice WRLD");
 
 // (2) apply()
 // similar to call, instead of taking arguments separately it takes it as array
@@ -98,13 +98,13 @@ const newFunc2 = newUser.about.bind(newUser);
 // ========== arrorw functions & this =============
 // arrow functions doesn't have their own this so it will look for an object outside of 
 // user1 & find the window object. Hence output ==> undefined undefined
-const user1 = {
-    firstName: "Sourabh",
-    age: 21,
-    about: () => {
-        console.log(`${this.firstName}, ${this.age}`);
-    }
-}
+// const user1 = {
+//     firstName: "Sourabh",
+//     age: 21,
+//     about: () => {
+//         console.log(`${this.firstName}, ${this.age}`);
+//     }
+// }
 
 // user1.about();
 
@@ -160,7 +160,7 @@ function createUser(firstName, lastName, age, password, email) {
 
 const user10 = createUser('Sourabh', 'Bisht', 21, '*******', 'something');
 const user11 = createUser('Juice', 'WRLD', 24, '*******', 'somethingToo');
-console.log(user10);
+// console.log(user10);
 // console.log(user10.about());
 
 // (3) creating object using Object.create()

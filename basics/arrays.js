@@ -19,9 +19,9 @@ let obj = {}; // object literal.
 
 // ================= Cloning array ===================
 
-// let arr1 = ["One", "Two"];
+let arr1 = ["One", "Two"];
 // (1)
-// let arr2 = arr1.slice(0).concat(["Three", "Four"]); 
+let arr2 = arr1.slice(0).concat(["Three", "Four"]); 
 
 
 // (2)
@@ -29,9 +29,9 @@ let obj = {}; // object literal.
 
 // (3) spread operator
 // let arr1 = ["Three", "Four"];
-// let arr = [...arr1, "Seven", "Eight"];
+let arr = [...arr1, "Seven", "Eight"];
 
-// let mix = [...arr, ...arr1];
+let mix = [...arr, ...arr1];
 // console.log("mixed array: " , mix);
 
 // console.log(arr1 === arr2);
